@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            margin: 15px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 15px 0;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .form-group {
+            margin: 20px 0;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Our Landing Page</h1>
+        <p>Join us today and get exclusive access to amazing features.</p>
+        <a href="#signup" class="btn">Get Started</a>
+
+        <div id="signup" class="form-group">
+            <h2>Sign Up Now</h2>
+            <input type="email" id="email" placeholder="Enter your email">
+            <button onclick="submitForm()">Sign Up</button>
+            <p id="message"></p>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message");
+            if (email.includes("@")) {
+                message.style.color = "green";
+                message.textContent = "Thank you for signing up!";
+            } else {
+                message.style.color = "red";
+                message.textContent = "Please enter a valid email.";
+            }
+        }
+    </script>
+
+</body>
+</html>
